@@ -85,7 +85,7 @@ syn region luaLoopBlock transparent matchgroup=luaRepeat start="\<for\>" end="\<
 syn keyword luaIn contained in
 
 " other keywords
-syn keyword luaStatement return local break log logf dump log_check self filter map reduce each mix range clone
+syn keyword luaStatement return local break 
 if lua_version > 5 || (lua_version == 5 && lua_subversion >= 2)
   syn keyword luaStatement goto
   syn match luaLabel "::\I\i*::"
@@ -134,7 +134,7 @@ if lua_version >= 5
 endif
 
 syn keyword luaFunc assert collectgarbage dofile error next
-syn keyword luaFunc print rawget rawset tonumber tostring type _VERSION
+syn keyword luaFunc print rawget rawset tonumber tostring type _VERSION log logf dump log_check self filter map reduce each mix range clone new
 
 if lua_version == 4
   syn keyword luaFunc _ALERT _ERRORMESSAGE gcinfo
@@ -366,3 +366,10 @@ let b:current_syntax = "lua"
 let &cpo = s:cpo_save
 unlet s:cpo_save
 " vim: et ts=8 sw=2
+
+
+syn match lua__pfn /_\w*[({]/me=e-1
+hi lua__pfn term=bold ctermfg=111 guifg=#ff0000
+
+syn match lua__fn /\a\w*[({]/me=e-1
+hi lua__fn term=bold ctermfg=149 guifg=#ff0000

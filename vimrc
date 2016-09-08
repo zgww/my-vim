@@ -72,7 +72,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
-Plugin 'bling/vim-airline'
+Plugin 'luochen1990/rainbow'
 " 插件列表结束
 call vundle#end()
 filetype plugin indent on
@@ -193,3 +193,29 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
  set fileencoding=utf-8
  set encoding=utf-8
+
+
+" rainbow 对于不同的括号，渲染成不同颜色
+let g:rainbow_active = 1
+"let g:rainbow_operators=2
+"let g:rainbow_conf = {
+"            \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+"            \   'ctermfgs': ['lightgray', 'lightblue', 'lightmagenta', 'lightcyan'],
+"            \   'operators': '_,_',
+"            \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+"            \   'separately': {
+"            \       '*': {},
+"            \       'lisp': {
+"            \           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+"            \           'ctermfgs': ['darkgray', 'darkblue', 'darkmagenta', 'darkcyan', 'darkred', 'darkgreen'],
+"            \       },
+"            \       'vim': {
+"            \           'parentheses': [['fu\w* \s*.*)','endfu\w*'], ['for','endfor'], ['while', 'endwhile'], ['if','_elseif\|else_','endif'], ['(',')'], ['\[','\]'], ['{','}']],
+"            \       },
+"            \       'tex': {
+"            \           'parentheses': [['(',')'], ['\[','\]'], ['\\begin{.*}','\\end{.*}']],
+"            \       },
+"            \       'css': 0,
+"            \       'stylus': 0,
+"            \   }
+"            \}
